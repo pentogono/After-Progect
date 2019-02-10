@@ -14,7 +14,7 @@ public class BrevetService {
         this.brevetRepository = brevetRepository;
     }
 
-    public static List<Brevet> findAll() {
+    public  List<Brevet> findAll() {
         return BrevetRepository.findAll();
     }
 }
