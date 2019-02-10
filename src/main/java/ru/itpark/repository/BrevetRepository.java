@@ -17,7 +17,7 @@ public class BrevetRepository {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public static List<Brevet> findAll() {
+    public  List<Brevet> findAll() {
         return jdbcTemplate.query("SELECT id_brevet, name FROM brevets",
                 new RowMapper<Brevet>() {
                     @Override
