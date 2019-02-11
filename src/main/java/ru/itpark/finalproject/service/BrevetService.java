@@ -18,4 +18,8 @@ public class BrevetService {
     public List<Brevet> findAll() {
         return brevetRepository.findAll();
     }
+
+    public Brevet findById(int id) {
+        return brevetRepository.findById(id);
+    }
 }

@@ -12,10 +12,12 @@
 
 <ul class="collection">
     <li data-th-each="brevet : ${main}" class="collection-item">
-        <a data-th-href="@{/{id}(id=${brevet.id_brevet})}">
+        <a data-th-href="@{/main/{id}(id=${brevet.id})}">
         <span data-th-text="${brevet.name}"></span>
         </a>
     </li>
+
+
 
 </ul>
 

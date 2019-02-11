@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Brevet {
-    private int id_brevet;
+    private int id;
     private String name;
+    private String link_map;
 }

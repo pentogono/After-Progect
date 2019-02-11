@@ -8,6 +8,7 @@ import ru.itpark.finalproject.domain.Brevet;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public class BrevetRepository {
@@ -18,15 +19,23 @@ public class BrevetRepository {
     }
 
     public List<Brevet> findAll() {
-        return jdbcTemplate.query("SELECT id_brevet, name FROM brevets",
-                new RowMapper<Brevet>() {
-                    @Override
-                    public Brevet mapRow(ResultSet resultSet, int i) throws SQLException {
-                        return new Brevet(
-                                resultSet.getInt("id_brevet"),
-                                resultSet.getString("name")
-                        );
-                    }
-                });
+        return jdbcTemplate.query("SELECT id, name, link_map FROM brevets",
+                (rs, i) -> new Brevet(
+                        rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getString("link_map")
+                ));
+    }
+
+    public Brevet findById(int id) {
+        return jdbcTemplate.queryForObject(
+                "SELECT id, name, link_map FROM brevets WHERE id=:id",
+                Map.of("id", id),
+                (rs, i) -> new Brevet(
+                        rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getString("link_map")
+                )
+        );
     }
 }
