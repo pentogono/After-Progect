@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import ru.itpark.service.BrevetService;
+import ru.itpark.finalproject.service.BrevetService;
 
 @Controller
 @RequestMapping("/main")
@@ -17,7 +17,7 @@ public class BrevetController {
 
     @GetMapping
     public String getAll(Model model) {
-        model.addAttribute("main", BrevetService.findAll());
+        model.addAttribute("main", brevetService.findAll());
         return "main";
     }
 }

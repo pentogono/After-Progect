@@ -1,9 +1,9 @@
-package ru.itpark.repository;
+package ru.itpark.finalproject.repository;
 
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
-import ru.itpark.domain.Brevet;
+import ru.itpark.finalproject.domain.Brevet;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,7 +17,7 @@ public class BrevetRepository {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public  List<Brevet> findAll() {
+    public List<Brevet> findAll() {
         return jdbcTemplate.query("SELECT id_brevet, name FROM brevets",
                 new RowMapper<Brevet>() {
                     @Override
