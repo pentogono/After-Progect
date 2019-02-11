@@ -11,10 +11,12 @@
 <h1>Список проведенных бреветов</h1>
 
 <ul class="collection">
-    <li class="collection-item">Alvin</li>
-    <li class="collection-item">Alvin</li>
-    <li class="collection-item">Alvin</li>
-    <li class="collection-item">Alvin</li>
+    <li data-th-each="brevet : ${main}" class="collection-item">
+        <a data-th-href="@{/{id}(id=${brevet.id_brevet})}">
+        <span data-th-text="${brevet.name}"></span>
+        </a>
+    </li>
+
 </ul>
 
 </body>
