@@ -55,25 +55,25 @@ public class BrevetRepository {
 
     }
 
-//    public List<R2017randonneur> listAll() {
-//        return jdbcTemplate.query(
-//                "SELECT id, name, year, time_200, time_300, time_400, time_600 FROM randonneurs_time_2017",
-//                new RowMapper<R2017randonneur>() {
-//                    @Override
-//                    public R2017randonneur mapRow(ResultSet resultSet, int i) throws SQLException {
-//                        return new R2017randonneur(
-//                                resultSet.getInt("id"),
-//                                resultSet.getString( "name"),
-//                                resultSet.getInt("year"),
-//                                resultSet.getString("time_200"),
-//                                resultSet.getString("time_300"),
-//                                resultSet.getString("time_400"),
-//                                resultSet.getString("time_600")
-//                        );
-//                    }
-//                }
-//        );
-//    }
+    public List<R2017randonneur> listAll() {
+        return jdbcTemplate.query(
+                "SELECT id, name, year, time_200, time_300, time_400, time_600 FROM randonneurs_time_2017",
+                new RowMapper<R2017randonneur>() {
+                    @Override
+                    public R2017randonneur mapRow(ResultSet resultSet, int i) throws SQLException {
+                        return new R2017randonneur(
+                                resultSet.getInt("id"),
+                                resultSet.getString( "name"),
+                                resultSet.getInt("year"),
+                                resultSet.getString("time_200"),
+                                resultSet.getString("time_300"),
+                                resultSet.getString("time_400"),
+                                resultSet.getString("time_600")
+                        );
+                    }
+                }
+        );
+    }
 
 
 }

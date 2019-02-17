@@ -12,7 +12,7 @@
 <details>
     <summary>Список участников за 2017 год
 
-        <table>
+        <table class="table">
             <thead>
             <tr>
                 <th>№ п/п</th>
@@ -25,10 +25,14 @@
             </thead>
 
             <tbody>
-            <tr>
-                <td>Alvin</td>
-                <td>Eclair</td>
-                <td>$0.87</td>
+            <tr data-th-each="r2017randonneur: ${r2017randonneurs}">
+                <td data-th-text="${r2017randonneur.id}">...</td>
+                <td data-th-text="${r2017randonneur.name}">...</td>
+                <td data-th-text="${r2017randonneur.year}">...</td>
+                <td data-th-text="${r2017randonneur.time_200}">...</td>
+                <td data-th-text="${r2017randonneur.time_300}">...</td>
+                <td data-th-text="${r2017randonneur.time_400}">...</td>
+                <td data-th-text="${r2017randonneur.time_600}">...</td>
             </tr>
 
             </tbody>
