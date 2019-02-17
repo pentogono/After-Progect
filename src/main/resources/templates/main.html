@@ -17,9 +17,41 @@
         </a>
     </li>
 
-
-
 </ul>
+
+<form data-th-action="@{/view}">
+    <input name="name" type="search" class="item-search" data-th-value="${name}">
+    <button type="submit">Go</button>
+</form>
+
+
+<p><a href="page-results.html">Переходим</a> </p>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>№ п/п</th>
+        <th>Фамилия Имя</th>
+        <th>200 км</th>
+        <th>300 км</th>
+        <th>400 км</th>
+        <th>600 км</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr data-th-each="r2017randonneur: ${r2017randonneurs}">
+        <td data-th-text="${r2017randonneur.id}">...</td>
+        <td data-th-text="${r2017randonneur.name}">...</td>
+        <td data-th-text="${r2017randonneur.year}">...</td>
+        <td data-th-text="${r2017randonneur.time_200}">...</td>
+        <td data-th-text="${r2017randonneur.time_300}">...</td>
+        <td data-th-text="${r2017randonneur.time_400}">...</td>
+        <td data-th-text="${r2017randonneur.time_600}">...</td>
+    </tr>
+
+    </tbody>
+</table>
 
 </body>
 </html>

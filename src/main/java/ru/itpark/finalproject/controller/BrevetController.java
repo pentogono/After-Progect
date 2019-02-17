@@ -2,9 +2,7 @@ package ru.itpark.finalproject.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import ru.itpark.finalproject.service.BrevetService;
 
 @Controller
@@ -27,4 +25,31 @@ public class BrevetController {
         model.addAttribute("brevet", brevetService.findById(id));
         return "brevet";
     }
+
+    @GetMapping(value = "/search", params = "name")
+    public String search(@RequestParam String name, Model model) {
+        model.addAttribute("name", name); // чтобы отображать в поле поиска
+        model.addAttribute("brevet", brevetService.findByName(name));
+        return "main";
+    }
+
+    @PostMapping(value = "/search", params = "name")
+    public  String search(@RequestParam String name) {
+        brevetService.findByName(name);
+        return "main";
+    }
+
+    @RequestMapping("/page-results")
+    public String pageResults() {
+        return "page-results";
+    }
+
+//    @RequestMapping(value = "/page-results", method = RequestMethod.GET)
+//    public String pageResults(Model model) {
+//        model.addAttribute("r2017randonneur", brevetService.listAll());
+//        return "page-results";
+//    }
+
+
+
 }
