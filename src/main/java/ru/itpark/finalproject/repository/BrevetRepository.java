@@ -83,40 +83,40 @@ public class BrevetRepository {
         );
     }
 
-    public List<Brevet> findAllByName(String name){
-        return jdbcTemplate.query(
-                "SELECT id,name, link_map, data_year, start_time, start_place, cp1_time, cp1_place, cp2_time, cp2_place, cp3_time, cp3_place, cp4_time, cp4_place, cp5_time, cp5_place, cp6_time, cp6_place, cp7_time, cp7_place, cp8_time, cp8_place, finish_time, finish_place FROM brevets WHERE name=:name",
-                Map.of("name", name),
-                (rs, i) -> new Brevet(
-                        rs.getInt("id"),
-                        rs.getString("name"),
-                        rs.getString("link_map"),
-                        rs.getInt("data_year"),
-                        rs.getString("start_time"),
-                        rs.getString("start_place"),
-                        rs.getString("cp1_time"),
-                        rs.getString("cp1_place"),
-                        rs.getString("cp2_time"),
-                        rs.getString("cp2_place"),
-                        rs.getString("cp3_time"),
-                        rs.getString("cp3_place"),
-                        rs.getString("cp4_time"),
-                        rs.getString("cp4_place"),
-                        rs.getString("cp5_time"),
-                        rs.getString("cp5_place"),
-                        rs.getString("cp6_time"),
-                        rs.getString("cp6_place"),
-                        rs.getString("cp7_time"),
-                        rs.getString("cp7_place"),
-                        rs.getString("cp8_time"),
-                        rs.getString("cp8_place"),
-                        rs.getString("finish_time"),
-                        rs.getString("finish_place")
-                )
-        );
-
-
-    }
+//    public List<Brevet> findAllByName(String name){
+//        return jdbcTemplate.query(
+//                "SELECT id,name, link_map, data_year, start_time, start_place, cp1_time, cp1_place, cp2_time, cp2_place, cp3_time, cp3_place, cp4_time, cp4_place, cp5_time, cp5_place, cp6_time, cp6_place, cp7_time, cp7_place, cp8_time, cp8_place, finish_time, finish_place FROM brevets WHERE name=:name",
+//                Map.of("name", name),
+//                (rs, i) -> new Brevet(
+//                        rs.getInt("id"),
+//                        rs.getString("name"),
+//                        rs.getString("link_map"),
+//                        rs.getInt("data_year"),
+//                        rs.getString("start_time"),
+//                        rs.getString("start_place"),
+//                        rs.getString("cp1_time"),
+//                        rs.getString("cp1_place"),
+//                        rs.getString("cp2_time"),
+//                        rs.getString("cp2_place"),
+//                        rs.getString("cp3_time"),
+//                        rs.getString("cp3_place"),
+//                        rs.getString("cp4_time"),
+//                        rs.getString("cp4_place"),
+//                        rs.getString("cp5_time"),
+//                        rs.getString("cp5_place"),
+//                        rs.getString("cp6_time"),
+//                        rs.getString("cp6_place"),
+//                        rs.getString("cp7_time"),
+//                        rs.getString("cp7_place"),
+//                        rs.getString("cp8_time"),
+//                        rs.getString("cp8_place"),
+//                        rs.getString("finish_time"),
+//                        rs.getString("finish_place")
+//                )
+//        );
+//
+//
+//    }
 
 //    public List<R2017randonneur> listAll() {
 //        return jdbcTemplate.query(

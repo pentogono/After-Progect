@@ -1,79 +1,74 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+<head data-th-replace="fragments/layout :: headFragment(title='Список бреветов')"></head>
 <body>
+<div class="container">
+    <div class="row">
+        <div class="col s12"></div>
+        <h1><span data-th-text="${brevet.name}"></span></h1>
 
-<h1>
-<span data-th-text="${brevet.name}"></span></h1>
+        <ul class="collection">
+            <li class="collection-item"><b>Время старта:</b><span data-th-text="${brevet.start_time}"></span></li>
+            <li class="collection-item"><a data-th-href="${brevet.start_place}" target="_blank">Место старта</a></span>
+            </li>
+            <li class="collection-item"><b>Время финиша:</b><span data-th-text="${brevet.finish_time}"></span></li>
+            <li class="collection-item"><a data-th-href="${brevet.finish_place}" target="_blank">Место финиша</a></li>
+        </ul>
 
-<h1>
-    Время старта:<span data-th-text="${brevet.start_time}"></span>
-</h1><h1>
-    <p><a data-th-href="${brevet.start_place}" target="_blank">Место старта</a> </p></span>
+        <p>
+        <table class="table" border="1" align="center">
+            <thead>
+            <tr>
+                <th>КП1 время</th>
+                <th>КП1 место</th>
+                <th>КП2 время</th>
+                <th>КП2 место</th>
+                <th>КП3 время</th>
+                <th>КП3 место</th>
+                <th>КП4 время</th>
+                <th>КП4 место</th>
+                <th>КП5 время</th>
+                <th>КП5 место</th>
+                <th>КП6 время</th>
+                <th>КП6 место</th>
+                <th>КП7 время</th>
+                <th>КП7 место</th>
+                <th>КП8 время</th>
+                <th>КП8 место</th>
+            </tr>
+            </thead>
 
-</h1><h1>
-    Время финиша:<span data-th-text="${brevet.finish_time}"></span>
-</h1><h1>
-    <p><a data-th-href="${brevet.finish_place}" target="_blank">Место финиша</a> </p></span>
-</h1>
+            <tbody>
+            <tr data-th-each="brevet: ${brevet}">
+                <td data-th-text="${brevet.cp1_time}">...</td>
+                <td>                    <a data-th-href="${brevet.cp1_place}" target="_blank">КП1</a></td>
+                <td data-th-text="${brevet.cp2_time}">...</td>
+                <td><a data-th-href="${brevet.cp2_place}" target="_blank">КП2</a></td>
+                <td data-th-text="${brevet.cp3_time}">...</td>
+                <td><a data-th-href="${brevet.cp3_place}" target="_blank">КП3</a></td>
+                <td data-th-text="${brevet.cp4_time}">...</td>
+                <td><a data-th-href="${brevet.cp4_place}" target="_blank">КП4</a></td>
+                <td data-th-text="${brevet.cp5_time}">...</td>
+                <td><a data-th-href="${brevet.cp5_place}" target="_blank">КП5</a></td>
+                <td data-th-text="${brevet.cp6_time}">...</td>
+                <td><a data-th-href="${brevet.cp6_place}" target="_blank">КП6</a></td>
+                <td data-th-text="${brevet.cp7_time}">...</td>
+                <td><a data-th-href="${brevet.cp7_place}" target="_blank">КП7</a></td>
+                <td data-th-text="${brevet.cp8_time}">...</td>
+                <td><a data-th-href="${brevet.cp8_place}" target="_blank">КП8</a></td>
+            </tr>
+            </tbody>
+        </table>
+        </p>
 
-    <table class="table" border="1" align="center">
-        <thead>
-        <tr>
-            <th>КП1 время</th>
-            <th>КП1 место</th>
-            <th>КП2 время</th>
-            <th>КП2 место</th>
-            <th>КП3 время</th>
-            <th>КП3 место</th>
-            <th>КП4 время</th>
-            <th>КП4 место</th>
-            <th>КП5 время</th>
-            <th>КП5 место</th>
-            <th>КП6 время</th>
-            <th>КП6 место</th>
-            <th>КП7 время</th>
-            <th>КП7 место</th>
-            <th>КП8 время</th>
-            <th>КП8 место</th>
-        </tr>
-        </thead>
+        <ul class="collection">
+            <li class="collection-item"><b>Маршрут бревета</b></li>
+        </ul>
 
-        <tbody>
-        <tr data-th-each="brevet: ${brevet}">
-            <td data-th-text="${brevet.cp1_time}">...</td>
-            <td><p><a data-th-href="${brevet.cp1_place}" target="_blank">КП1</a> </p></td>
-            <td data-th-text="${brevet.cp2_time}">...</td>
-            <td><p><a data-th-href="${brevet.cp2_place}" target="_blank">КП2</a> </p></td>
-            <td data-th-text="${brevet.cp3_time}">...</td>
-            <td><p><a data-th-href="${brevet.cp3_place}" target="_blank">КП3</a> </p></td>
-            <td data-th-text="${brevet.cp4_time}">...</td>
-            <td><p><a data-th-href="${brevet.cp4_place}" target="_blank">КП4</a> </p></td>
-            <td data-th-text="${brevet.cp5_time}">...</td>
-            <td><p><a data-th-href="${brevet.cp5_place}" target="_blank">КП5</a> </p></td>
-            <td data-th-text="${brevet.cp6_time}">...</td>
-            <td><p><a data-th-href="${brevet.cp6_place}" target="_blank">КП6</a> </p></td>
-            <td data-th-text="${brevet.cp7_time}">...</td>
-            <td><p><a data-th-href="${brevet.cp7_place}" target="_blank">КП7</a> </p></td>
-            <td data-th-text="${brevet.cp8_time}">...</td>
-            <td><p><a data-th-href="${brevet.cp8_place}" target="_blank">КП8</a> </p></td>
-        </tr>
-        </tbody>
-    </table>
+        <iframe class="gpsies" data-th-src="${'https://www.gpsies.com/mapOnly.do' + brevet.link_map}" width="100%"
+                height="500" frameborder="0" scrolling="auto" marginheight="0" marginwidth="0"></iframe>
 
-
-
-<iframe class="gpsies" data-th-src="${'https://www.gpsies.com/mapOnly.do' + brevet.link_map}" width="100%" height="500" frameborder="0" scrolling="auto" marginheight="0" marginwidth="0"></iframe>
-
-
-
-
-
+    </div>
+    </div>
 </body>
 </html>

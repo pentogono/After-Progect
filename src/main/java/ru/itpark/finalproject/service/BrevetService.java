@@ -26,9 +26,9 @@ public class BrevetService {
         return brevetRepository.findById(id);
     }
 
-    public List<Brevet> findByName(String name) {
-        return brevetRepository.findAllByName(name);
-    }
+//    public List<Brevet> findByName(String name) {
+////        return brevetRepository.findAllByName(name);
+////    }
 
 //    public List<R2017randonneur> listAll() {
 //        return brevetRepository.listAll();

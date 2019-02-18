@@ -26,22 +26,27 @@ public class BrevetController {
         return "brevet";
     }
 
-    @GetMapping(value = "/search", params = "name")
-    public String search(@RequestParam String name, Model model) {
-        model.addAttribute("name", name); // чтобы отображать в поле поиска
-        model.addAttribute("brevet", brevetService.findByName(name));
-        return "main";
-    }
-
-    @PostMapping(value = "/search", params = "name")
-    public  String search(@RequestParam String name) {
-        brevetService.findByName(name);
-        return "main";
-    }
+//    @GetMapping(value = "/search", params = "name")
+//    public String search(@RequestParam String name, Model model) {
+//        model.addAttribute("name", name); // чтобы отображать в поле поиска
+//        model.addAttribute("brevet", brevetService.findByName(name));
+//        return "main";
+//    }
+//
+//    @PostMapping(value = "/search", params = "name")
+//    public  String search(@RequestParam String name) {
+//        brevetService.findByName(name);
+//        return "main";
+//    }
 
     @RequestMapping("/page-results")
     public String pageResults() {
         return "page-results";
+    }
+
+    @RequestMapping("/external-links")
+    public String externalLinks() {
+        return "external-links";
     }
 
 //    @RequestMapping(value = "/page-results", method = RequestMethod.GET)

@@ -1,18 +1,13 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+<head data-th-replace="fragments/layout :: headFragment(title='Список бреветов')"></head>
 <body>
+<div class="container">
+    <div class="row">
+        <div class="col s12"></div>
+        <h1>Список участников за 2017 год</h1>
 
-<details>
-    <summary>Список участников за 2017 год
-
-        <table class="table">
+        <table class="table" border="1" align="center">
             <thead>
             <tr>
                 <th>№ п/п</th>
@@ -25,7 +20,7 @@
             </thead>
 
             <tbody>
-            <tr data-th-each="r2017randonneur: ${r2017randonneurs}">
+            <tr data-th-each="r2017randonneur: ${r2017randonneur}">
                 <td data-th-text="${r2017randonneur.id}">...</td>
                 <td data-th-text="${r2017randonneur.name}">...</td>
                 <td data-th-text="${r2017randonneur.year}">...</td>
@@ -38,8 +33,7 @@
             </tbody>
         </table>
 
-    </summary>
-</details>
 
+</div>
 </body>
 </html>
