@@ -45,7 +45,7 @@ public class BrevetController {
     }
 
 //    @RequestMapping(value = "/page-results", method = RequestMethod.GET)
-//    public String pageResults(Model model) {
+//    public String pageResult (Model model) {
 //        model.addAttribute("r2017randonneur", brevetService.listAll());
 //        return "page-results";
 //    }

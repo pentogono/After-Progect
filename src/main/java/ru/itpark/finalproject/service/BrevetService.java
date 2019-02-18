@@ -30,9 +30,9 @@ public class BrevetService {
         return brevetRepository.findAllByName(name);
     }
 
-    public List<R2017randonneur> listAll() {
-        return brevetRepository.listAll();
-    }
+//    public List<R2017randonneur> listAll() {
+//        return brevetRepository.listAll();
+//    }
 
 
 }
