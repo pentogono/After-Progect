@@ -1,14 +1,11 @@
 package ru.itpark.finalproject.repository;
 
-import org.springframework.jdbc.core.RowMapper;
+
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 import ru.itpark.finalproject.domain.Brevet;
 
-import ru.itpark.finalproject.domain.R2017randonneur;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
@@ -85,7 +82,7 @@ public class BrevetRepository {
 
 //    public List<Brevet> findAllByName(String name){
 //        return jdbcTemplate.query(
-//                "SELECT id,name, link_map, data_year, start_time, start_place, cp1_time, cp1_place, cp2_time, cp2_place, cp3_time, cp3_place, cp4_time, cp4_place, cp5_time, cp5_place, cp6_time, cp6_place, cp7_time, cp7_place, cp8_time, cp8_place, finish_time, finish_place FROM brevets WHERE name=:name",
+//                "SELECT id,name, link_map, data_year, start_time, start_place, cp1_time, cp1_place, cp2_time, cp2_place, cp3_time, cp3_place, cp4_time, cp4_place, cp5_time, cp5_place, cp6_time, cp6_place, cp7_time, cp7_place, cp8_time, cp8_place, finish_time, finish_place FROM brevets WHERE name=?",
 //                Map.of("name", name),
 //                (rs, i) -> new Brevet(
 //                        rs.getInt("id"),
@@ -118,23 +115,18 @@ public class BrevetRepository {
 //
 //    }
 
-//    public List<R2017randonneur> listAll() {
+//    public List<Randonneur> listAll() {
 //        return jdbcTemplate.query(
 //                "SELECT id, name, year, time_200, time_300, time_400, time_600 FROM randonneurs_time_2017",
-//                new RowMapper<R2017randonneur>() {
-//                    @Override
-//                    public R2017randonneur mapRow(ResultSet resultSet, int i) throws SQLException {
-//                        return new R2017randonneur(
-//                                resultSet.getInt("id"),
-//                                resultSet.getString( "name"),
-//                                resultSet.getInt("year"),
-//                                resultSet.getString("time_200"),
-//                                resultSet.getString("time_300"),
-//                                resultSet.getString("time_400"),
-//                                resultSet.getString("time_600")
-//                        );
-//                    }
-//                }
+//                (rs, i) -> new Randonneur(
+//                        rs.getInt("id"),
+//                        rs.getString( "name"),
+//                        rs.getInt("year"),
+//                        rs.getString("time_200"),
+//                        rs.getString("time_300"),
+//                        rs.getString("time_400"),
+//                        rs.getString("time_600")
+//                )
 //        );
 //    }
 

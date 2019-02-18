@@ -3,7 +3,7 @@ package ru.itpark.finalproject.service;
 import org.springframework.stereotype.Service;
 import ru.itpark.finalproject.domain.Brevet;
 
-import ru.itpark.finalproject.domain.R2017randonneur;
+
 import ru.itpark.finalproject.repository.BrevetRepository;
 
 import java.util.List;
@@ -27,10 +27,10 @@ public class BrevetService {
     }
 
 //    public List<Brevet> findByName(String name) {
-////        return brevetRepository.findAllByName(name);
-////    }
+//        return brevetRepository.findAllByName(name);
+//    }
 
-//    public List<R2017randonneur> listAll() {
+//    public List<Randonneur> listAll() {
 //        return brevetRepository.listAll();
 //    }
 
