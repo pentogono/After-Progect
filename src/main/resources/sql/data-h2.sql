@@ -8,7 +8,7 @@ INSERT INTO brevets (id, name, link_map, data_year, start_time, start_place, cp1
 (7, 'Марийский', '?fileId=yhcnunezuurwxchc', '2017', ' 06:00 23 сентября 2017 года', 'https://clck.ru/FDvDK', '07:02 - 08:20', 'https://clck.ru/FDvJp', '08:32 - 11:44', 'https://clck.ru/FDvQv', '09:48 - 14:36', 'https://clck.ru/FDvTo', '11:19 - 18:04', 'https://clck.ru/FDvUi', '-', '#', '-', '#', '-', '#', '-', '#', '  11:53 - 19:00', 'https://clck.ru/FDuWR');
 
 INSERT INTO randonneurs_time_2017 (id, name, year, time_200, time_300, time_400, time_600) VALUES
-(1, 'Мирониченко Виктор', 2017, '-', '-', '-', '-'),
+(1, 'Мирониченко Виктор', 2017, '09:34, 09:08', '12:45', '17:34', '34:55'),
 (2, '-', 2017, '-', '-', '-', '-'),
 (3, '-', 2017, '-', '-', '-', '-'),
 (4, '-', 2017, '-', '-', '-', '-'),
