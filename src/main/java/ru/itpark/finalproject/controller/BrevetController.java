@@ -50,7 +50,7 @@ public class BrevetController {
     }
 
 
-    @RequestMapping(value = "/main/page-results", method = RequestMethod.GET)
+    @RequestMapping(value = "/page-results", method = RequestMethod.GET)
     public String pageResult(Model model) {
         model.addAttribute("item", brevetService.listAll());
         return "page-results";
