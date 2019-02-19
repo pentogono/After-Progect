@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head data-th-replace="fragments/layout :: headFragment(title='Список бреветов')"></head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col s12"></div>
+        <h1>Результат поиска</h1>
+
+<ul class="collection">
+    <li data-th-each="item : ${items}" class="collection-item">
+        <a data-th-href="@{{id}(id=${item.id})}">
+            <span data-th-text="${item.name}"></span>
+        </a>
+    </li>
+</ul>
+
+<p data-th-if="${item.size() == 0}" class="no-items">Товары не найдены</p>
+
+    </div>
+</div>
+</body>
+</html>

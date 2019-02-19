@@ -4,6 +4,7 @@ package ru.itpark.finalproject.repository;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 import ru.itpark.finalproject.domain.Brevet;
+import ru.itpark.finalproject.domain.Randonneur;
 
 
 import java.util.List;
@@ -115,20 +116,20 @@ public class BrevetRepository {
 //
 //    }
 
-//    public List<Randonneur> listAll() {
-//        return jdbcTemplate.query(
-//                "SELECT id, name, year, time_200, time_300, time_400, time_600 FROM randonneurs_time_2017",
-//                (rs, i) -> new Randonneur(
-//                        rs.getInt("id"),
-//                        rs.getString( "name"),
-//                        rs.getInt("year"),
-//                        rs.getString("time_200"),
-//                        rs.getString("time_300"),
-//                        rs.getString("time_400"),
-//                        rs.getString("time_600")
-//                )
-//        );
-//    }
+    public List<Randonneur> listAll() {
+        return jdbcTemplate.query(
+                "SELECT id, name, year, time_200, time_300, time_400, time_600 FROM randonneurs_time_2017",
+                (rs, i) -> new Randonneur(
+                        rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getInt("year"),
+                        rs.getString("time_200"),
+                        rs.getString("time_300"),
+                        rs.getString("time_400"),
+                        rs.getString("time_600")
+                )
+        );
+    }
 
 
 }

@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 import ru.itpark.finalproject.domain.Brevet;
 
 
+import ru.itpark.finalproject.domain.Randonneur;
 import ru.itpark.finalproject.repository.BrevetRepository;
 
 import java.util.List;
@@ -12,7 +13,7 @@ import java.util.List;
 public class BrevetService {
     private final BrevetRepository brevetRepository;
 
-    public  BrevetService(BrevetRepository brevetRepository) {
+    public BrevetService(BrevetRepository brevetRepository) {
         this.brevetRepository = brevetRepository;
     }
 
@@ -30,9 +31,9 @@ public class BrevetService {
 //        return brevetRepository.findAllByName(name);
 //    }
 
-//    public List<Randonneur> listAll() {
-//        return brevetRepository.listAll();
-//    }
+    public List<Randonneur> listAll() {
+        return brevetRepository.listAll();
+    }
 
 
 }

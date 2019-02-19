@@ -20,14 +20,14 @@
             </thead>
 
             <tbody>
-            <tr data-th-each="r2017randonneur: ${r2017randonneur}">
-                <td data-th-text="${r2017randonneur.id}">...</td>
-                <td data-th-text="${r2017randonneur.name}">...</td>
-                <td data-th-text="${r2017randonneur.year}">...</td>
-                <td data-th-text="${r2017randonneur.time_200}">...</td>
-                <td data-th-text="${r2017randonneur.time_300}">...</td>
-                <td data-th-text="${r2017randonneur.time_400}">...</td>
-                <td data-th-text="${r2017randonneur.time_600}">...</td>
+            <tr data-th-each="item: ${items}">
+                <td data-th-text="${item.id}">...</td>
+                <td data-th-text="${item.name}">...</td>
+                <td data-th-text="${item.year}">...</td>
+                <td data-th-text="${item.time_200}">...</td>
+                <td data-th-text="${item.time_300}">...</td>
+                <td data-th-text="${item.time_400}">...</td>
+                <td data-th-text="${item.time_600}">...</td>
             </tr>
 
             </tbody>

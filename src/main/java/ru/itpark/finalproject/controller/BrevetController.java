@@ -8,7 +8,7 @@ import ru.itpark.finalproject.service.BrevetService;
 @Controller
 @RequestMapping("/main")
 public class BrevetController {
-    private  final BrevetService brevetService;
+    private final BrevetService brevetService;
 
     public BrevetController(BrevetService brevetService) {
         this.brevetService = brevetService;
@@ -29,8 +29,8 @@ public class BrevetController {
 //    @GetMapping(value = "/search", params = "name")
 //    public String search(@RequestParam String name, Model model) {
 //        model.addAttribute("name", name); // чтобы отображать в поле поиска
-//        model.addAttribute("brevet", brevetService.findByName(name));
-//        return "main";
+//        model.addAttribute("item", brevetService.findByName(name));
+//        return "view";
 //    }
 //
 //    @PostMapping(value = "/search", params = "name")
@@ -49,12 +49,12 @@ public class BrevetController {
         return "external-links";
     }
 
-//    @RequestMapping(value = "/main/page-results", method = RequestMethod.GET)
-//    public String pageResult (Model model) {
-//        model.addAttribute("item", brevetService.listAll());
-//        return "page-results";
-//    }
 
+    @RequestMapping(value = "/main/page-results", method = RequestMethod.GET)
+    public String pageResult(Model model) {
+        model.addAttribute("item", brevetService.listAll());
+        return "page-results";
+    }
 
 
 }
